@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.ericsson.nms.rv.taf</groupId>
+        <artifactId>ENM-RFA-testware</artifactId>
+        <version>1.0.3-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>ERICTAFENM-RFA-testware_CXP1234567</artifactId>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <target.java.version>1.7</target.java.version>
+        <!-- -->
+    </properties>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>ERICTAFENM-RFA-testware_operators</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.ericsson.cifwk</groupId>
+            <artifactId>taf-serviceability</artifactId>
+            <version>2.5.12</version>
+        </dependency>
+        <dependency>
+        	<groupId>com.ericsson.oss.mediation.cm</groupId>
+        	<artifactId>CmMediationTest-impl</artifactId>
+        	<version>1.1.148</version>
+        </dependency>
+    </dependencies>
+
+
+</project>

@@ -1,0 +1,40 @@
+<configuration>
+    <appender name="SIFT" class="ch.qos.logback.classic.sift.SiftingAppender">
+        <discriminator
+            class="com.ericsson.cifwk.taf.VuserBasedDiscriminator" />
+        <sift>
+            <appender class="ch.qos.logback.core.FileAppender">
+                <file>taf-${vuser}.log</file>
+                <layout class="ch.qos.logback.classic.PatternLayout">
+                    <pattern>%d{HH:mm:ss:SSS} | %-5level | %logger{20} | %msg%n%rEx
+                    </pattern>
+                </layout>
+            </appender>
+        </sift>
+    </appender>
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{HH:mm:ss:SSS} [%t] %-5level | %logger{40} | %msg%n%rEx
+            </pattern>
+        </layout>
+    </appender>
+    <appender name="file" class="ch.qos.logback.core.FileAppender">
+        <file>taf-overall.log</file>
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{HH:mm:ss:SSS} [%t] %-5level | %logger{20} | %msg%n%rEx
+            </pattern>
+        </layout>
+    </appender>
+
+    <root level="INFO">
+        <appender-ref ref="SIFT" />
+        <appender-ref ref="console" />
+        <appender-ref ref="file" />
+
+    </root>    
+    <logger name="se.ericsson.jcat" level="OFF"/>
+    <logger name="com.ericsson" level="INFO"/>
+    <logger name="com.ericsson.cifwk.taf.performance.metric.graphite.AmqpPublisher" level="INFO"/>
+    <logger name="com.ericsson.cifwk.taf.scenario" level = "DEBUG"/>
+    <logger name="org.apache.http.wire" level="INFO"/>
+</configuration>
